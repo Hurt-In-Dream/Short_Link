@@ -9,11 +9,16 @@ function cn(...inputs: (string | undefined | null | false)[]) {
   return twMerge(clsx(inputs));
 }
 
-const TABS = ['短网址', '二维码', '小程序', '云笔记'];
-const DOMAINS = ['c1n.me', '80c.me', 'gv3.cn', '2em.cn', 'ka3.cn', 'b52.cn'];
+const DOMAINS = [
+  's.011600.xyz',
+  's.116514.xyz',
+  's.277891.xyz',
+  's.hurtindream.de',
+  's.hurtindream.qzz.io',
+  's.lovesora.de'
+];
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState(TABS[0]);
   const [longUrl, setLongUrl] = useState('');
   const [selectedDomain, setSelectedDomain] = useState(DOMAINS[0]);
   const [customCode, setCustomCode] = useState('');
@@ -110,27 +115,7 @@ export default function App() {
           className="w-full bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[2.5rem] p-6 md:p-10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] flex flex-col"
         >
 
-          {/* Tabs */}
-          <div className="bg-white/5 p-1.5 rounded-2xl flex relative max-w-lg mx-auto mb-8 border border-white/10">
-            {TABS.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className="relative flex-1 py-3 text-sm md:text-base font-medium rounded-xl transition-colors outline-none"
-              >
-                {activeTab === tab && (
-                  <motion.div
-                    layoutId="active-tab"
-                    className="absolute inset-0 bg-blue-600 rounded-xl shadow-lg shadow-blue-500/30"
-                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  />
-                )}
-                <span className={cn("relative z-10 transition-colors", activeTab === tab ? "text-white" : "text-white/60 hover:text-white/90")}>
-                  {tab}
-                </span>
-              </button>
-            ))}
-          </div>
+
 
           <div className="flex flex-col gap-6">
             {/* Base Url Input Area */}
@@ -228,12 +213,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="text-center mt-2">
-              <button className="text-white/50 hover:text-white transition-colors flex items-center gap-1 mx-auto text-sm">
-                更 多 设 置
-                <Icon icon="lucide:chevron-down" className="w-4 h-4 ml-1" />
-              </button>
-            </div>
+
 
             <button
               onClick={handleGenerate}

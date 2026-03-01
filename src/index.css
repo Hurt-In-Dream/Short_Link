@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'LXGW WenKai Lite', ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-family: 'LXGW WenKai Lite', ui-sans-serif, system-ui, sans-serif;
   color: white;
   background-color: #000;
 }
