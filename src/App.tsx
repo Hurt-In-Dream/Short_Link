@@ -100,7 +100,7 @@ export default function App() {
           className="text-center mb-10"
         >
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight drop-shadow-md">
-            免费短网址在线生成器
+            夢中有傷の短网址生成器
           </h1>
           <p className="text-lg text-white/80 font-medium">
             专业的短链接生成工具，支持自定义短码、多域名、密码访问
@@ -122,18 +122,10 @@ export default function App() {
             <div className="relative group">
               <textarea
                 value={longUrl}
-                onChange={(e) => setLongUrl(e.target.value)}
+                onChange={(e) => setLongUrl(e.target.value.replace(/\s+/g, ''))}
                 placeholder="请输入要缩短的长网址，如：https://example.com"
                 className="w-full h-32 md:h-40 bg-white/5 border border-white/10 rounded-2xl p-5 text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-blue-500/50 focus:border-blue-500/50 focus:bg-white/10 transition-all resize-none shadow-inner"
               />
-              <div className="absolute bottom-4 right-4 flex gap-3 text-white/40">
-                <button className="hover:text-white transition-colors">
-                  <Icon icon="lucide:layout-grid" className="w-5 h-5" />
-                </button>
-                <button className="hover:text-white transition-colors">
-                  <Icon icon="lucide:camera" className="w-5 h-5" />
-                </button>
-              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-[1fr_150px] gap-6">
@@ -266,7 +258,7 @@ export default function App() {
         </motion.div>
 
         <p className="mt-8 text-white/40 text-sm">
-          © {new Date().getFullYear()} 短网址生成器. All rights reserved.
+          © {new Date().getFullYear()} 夢中有傷の短网址生成器. All rights reserved.
         </p>
 
       </div>
